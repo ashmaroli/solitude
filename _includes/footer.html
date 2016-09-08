@@ -1,0 +1,47 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-narrow">
+        {% if site.logo %}
+          <img src="{{ site.baseurl }}/assets/img/{{ site.logo }}" class="footer-logo" width="150" height="auto">
+        {% else %}
+          <h2 class="footer-heading">
+            {{ site.title | escape }}
+          </h2>
+        {% endif %}        
+        <ul class="contact-list">
+          <li>
+            {% if site.author %}
+            Author: {{ site.author | escape }}
+            {% else %}
+              {{ site.title | escape }}
+            {% endif %}
+          </li>
+          <li>E-mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        </ul>
+        <ul class="social-media-list">
+          {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+
+          {% if site.twitter_username %}
+          <li>
+            {% include icon-twitter.html username=site.twitter_username %}
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="footer-col footer-col-wide">
+        <p class="description">{{ site.description | escape }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="sub-footer">
+    <div class="wrapper">
+      <a href="#">Solitude Theme</a> | 
+      Powered by <a href="#">Jekyll</a>
+    </div>
+  </div>
+</footer>

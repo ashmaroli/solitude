@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div class="home">
+  <p>Latest Post</p>
+  <div class="featured_post">
+    {% for post in site.posts limit:1 %}
+      <div class="post-col">
+        <div class="post-header">
+          <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a></h2>
+          <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+        </div>
+        <div class="excerpt">
+          {{ post.excerpt }}
+        </div>
+        <div class="post-link">
+          <a href="{{ post.url | prepend: site.baseurl }}">Read More..</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <p>Recent Posts</p>
+  <div class="recent_posts_wrap">
+    <div class="recent_posts">
+      {% for post in site.posts offset:1 limit:3 %}
+        <div class="post-col">
+          <div class="post-header">
+            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape | truncate: '56' }}</a></h3>
+            <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+          </div>
+          <div class="excerpt">
+            {{ post.excerpt | truncate: '240'}}</div>
+          <div class="post-link">
+            <a href="{{ post.url | prepend: site.baseurl }}">Read More..</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe via RSS</a></p>
+</div>
