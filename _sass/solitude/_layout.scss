@@ -33,7 +33,7 @@
 .site-nav {
   position: absolute;
   top: 33%;
-  right: 45px;
+  right: 0;
 
   .menu-icon {
     display: none;
@@ -231,12 +231,14 @@
   margin-bottom: 15px;
   background: #fafafa;
   padding: 10px;
-  @include border-radius(4px);
+  @include border-radius(6px);
+  @include box-shadow(0 1px 1px #{darken($background-color, 21%)});
 
   .post-col {
     @extend .featured_post;
     padding: 20px;
     padding-bottom: 0;
+    box-shadow: none;
 
     h2, h3 {
       margin-bottom: 5px;
@@ -247,17 +249,18 @@
 .recent_posts_wrap {
   width: 100%;
   overflow-x: auto;
+  @include border-radius(6px);
+  @include box-shadow(0 1px 1px #{darken($background-color, 21%)});
 }
 .recent_posts {
   width: 960px;
-  height: 400px;
+  margin: 0;
+  box-shadow: none;
 
   .post-col {
     @extend .featured_post;
     float: left;
-    width: 312px;
-    height: 375px;
-    padding: 20px;
+    margin: 0;
 
     &:not(:first-of-type):not(:last-of-type ) {
       border: 1px solid transparent;
@@ -265,13 +268,31 @@
     }
 
     .excerpt {
-      height:200px;
       overflow: hidden;
     }
   }
 
-  .post-header {
-    height: 111px;
+  .duos {
+    width: 100%;
+  }
+
+  .trix {
+    width: 50%;
+
+    .excerpt {
+      height: 135px;
+    }
+  }
+
+  .quattros {
+    width: 312px;
+
+    .post-header {
+      height: 111px;
+    }
+    .excerpt {
+      height: 200px;
+    }
   }
 }
 
@@ -343,6 +364,10 @@
       font-size: 18px;
     }
   }
+
+  .highlight code {
+    color: #212121;
+  }
 }
 
 .rss-subscribe {
@@ -362,5 +387,22 @@
     a {
       color: lighten($brand-color, 60%);
     }
+  }
+}
+
+.see-all {
+  float: right;
+  @extend .rss-subscribe;
+}
+
+.all-posts {
+  .post-col {
+    @extend .featured_post;
+    margin-bottom: $spacing-unit * 0.7;
+    padding: $spacing-unit;
+
+    h2, h3 {
+      margin-bottom: 5px;
+    }    
   }
 }

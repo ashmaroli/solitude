@@ -5,7 +5,7 @@
 Introducing a new gem-based Jekyll theme. Currently there's quite a bit to set up and go.
 Solitude has been written using *minima* as foundation. 
 
-![Solitude preview](/xtras/screenshot.png)
+![Solitude preview](/xtras/screenshot.jpg)
 
 ## Installation
 

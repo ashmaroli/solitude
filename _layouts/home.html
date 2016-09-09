@@ -21,13 +21,21 @@ layout: default
     {% endfor %}
   </div>
 
+  {% if site.posts.size > 1 %}
+  {% assign posts = site.posts.size %}
   <p>Recent Posts</p>
   <div class="recent_posts_wrap">
     <div class="recent_posts">
       {% for post in site.posts offset:1 limit:3 %}
-        <div class="post-col">
+        <div class="post-col
+          {% case site.posts.size %}
+            {% when 2 %} duos
+            {% when 3 %} trix
+            {% else %} quattros
+          {% endcase %}
+        ">
           <div class="post-header">
-            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape | truncate: '56' }}</a></h3>
+            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape | truncate: '45' }}</a></h3>
             <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
           </div>
           <div class="excerpt">
@@ -39,6 +47,10 @@ layout: default
       {% endfor %}
     </div>
   </div>
+  {% endif %}
 
   <p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe via RSS</a></p>
+  {% if site.posts.size > 4 %}
+    <p class="see-all"><a href="/all-posts/">see all posts</a></p>
+  {% endif %}
 </div>
