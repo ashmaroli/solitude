@@ -32,6 +32,56 @@ Add Solitude to your `_config.yml` :
 ```yaml
 theme: solitude
 ```
+### Directory Structure
+
+> Note:  
+> Main **`Folders`** are formatted **`bold & highlighted`**  
+> Subfolders, ***bold+italic*** 
+
+- **`_layouts`**
+  - default.html
+  - home.html
+  - list.html
+  - page.html
+  - post.html
+- **`_includes`**
+  - footer.html
+  - header.html
+  - icon-github.html
+  - icon-github.svg
+  - icon-twitter.html
+  - icon-twitter.svg
+  - meta.html
+- **`_sass`**
+  - solitude.scss
+  - ***solitude***
+    - _base.scss
+    - _layout.scss
+    - _syntax-highlighting.scss
+- **`assets`**
+  - ***css***
+    - main.scss
+  - ***img***
+    - cover.jpg
+    - logo.png
+
+--
+
+### Customization
+
+To customize this theme for your site, simply create the concerned directory, (its subdirectory, if present) and its file. Jekyll will use that to override styles shipped with the gem.
+
+#### To change the logo:
+
+If you logo file is named `logo.png`:
+- simply create a directory `assets/` at the root of your site and another directory `img/` within it.
+- then add your `logo.png` to `<your-site>/assets/img/`
+
+If your logo file is anything else: 
+- create `<your-site>/assets/img/`
+- add `<your-logo.extension>` to `<your-site>/assets/img/`
+- update `_config.yml` by changing `logo: logo.png` to `logo: <your-logo.extension>`
+
 
 ## Contributing
 
