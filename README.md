@@ -36,7 +36,7 @@ The variants currently available are:
 
   the *first variant*, uses color tones from a snowy night scene.
 
-![Show](/xtras/show.jpg)
+![Snow](/xtras/snow.jpg)
 
 Add Solitude ( and optionally a variant ) to your `_config.yml` :
 
