@@ -30,6 +30,7 @@ github_username:  ashmaroli
 # Build settings
 markdown: kramdown
 theme: solitude
+theme_variant: snow
 gems:
   - jekyll-admin
   - jekyll-feed

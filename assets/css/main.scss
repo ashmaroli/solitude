@@ -1,4 +1,4 @@
 ---
 ---
 
-@import "solitude";
+@import "{{ site.theme_variant | default: 'shore' }}.scss";

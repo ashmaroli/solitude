@@ -2,17 +2,24 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  min-height: 342px;
-  background: url('../../assets/img/cover.jpg');
-
-  // Positioning context for the mobile navigation icon
   position: relative;
+  min-height: 342px;
+  border-top: 5px solid $grey-color-dark;
+
+  @include min-media-query($on-mobile) {
+    background: url('../../assets/img/snow.jpg') 36% 85%;
+    background-size: cover;
+  }
+  @include media-query($on-mobile) {
+    background: url('../../assets/img/snow.jpg') 36% 5px;
+    background-size: cover;
+  }      
 }
+
 .top-bar {
   position: relative;
   padding: 0 $spacing-unit;
-  background: rgba($accent-color, 0.15);
+  background: rgba($accent-color, 0.81);
   box-shadow: 0 1px 2px $accent-color;
 }
 
@@ -58,7 +65,7 @@
     right: $spacing-unit / 2;
     text-align: right;
     border-radius: 3px;
-    background: rgba($accent-color, 0.51);
+    background: rgba(62, 62, 76, 0.81);
     box-shadow: 0 1px 2px $accent-color;
 
     .menu-icon {
@@ -110,15 +117,26 @@
  * Site footer
  */
 .site-footer {
+  position: relative;
   margin-top: $pull-top;
   padding: #{$spacing-unit / 2} 0 0;
   font-size: 14px;
   color: #a2c4cd;
-  background: darken($brand-color, 12%);
+  background: #262e3c url('../../assets/img/snow.jpg') -180px 0;
+  background-blend-mode: luminosity;
   border-top: 1px solid $grey-color-light;
 
   a {
-    color: lighten($brand-color, 12%);
+    color: #2e6b99;
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    content: "";
+    background: rgba(30, 38, 52, 0.51);
+    height: 160px;
+    width: 100%;
   }
 }
 
@@ -191,7 +209,7 @@
 
     &:not(:first-child):not(:last-child ) {
       border: 1px solid transparent;
-      border-image: linear-gradient(to top, transparent, #{rgba($brand-color, 0.45)}, transparent) 1;
+      border-image: linear-gradient(to top, transparent, #{rgba($base-color, 0.45)}, transparent) 1;
     }
   }
 
@@ -204,8 +222,8 @@
   margin-top: 15px;
   padding: 8px 0 5px;
   text-align: center;
-  color: $brand-color;
-  background: darken($brand-color, 18%);
+  color: #676f7e;
+  background: #090f1b;
 }
 
 /**
@@ -229,7 +247,7 @@
   @extend %clearfix;
   position: relative;
   margin-bottom: 15px;
-  background: #fafafa;
+  background: #f5f5f5;
   padding: 10px;
   @include border-radius(6px);
   @include box-shadow(0 1px 1px #{darken($background-color, 21%)});
@@ -382,10 +400,10 @@
   }
   
   &:hover {
-    background: darken($brand-color, 12%);
+    background: #244071;
 
     a {
-      color: lighten($brand-color, 60%);
+      color: lighten($base-color, 60%);
     }
   }
 }

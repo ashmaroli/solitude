@@ -11,7 +11,7 @@ $pull-top:         -90px;
 
 $text-color:       #151515 !default;
 $background-color: #f6f3ee !default;
-$brand-color:      #0281a1 !default;
+$base-color:      #0281a1 !default;
 $accent-color:     #037290 !default;
 
 $grey-color:       #828282 !default;
@@ -57,6 +57,6 @@ $on-laptop:        1020px !default;
 // Import partials.
 @import
   "solitude/base",
-  "solitude/layout",
-  "solitude/syntax-highlighting"
+  "solitude/syntax-highlighting",
+  "shore/style"
 ;
